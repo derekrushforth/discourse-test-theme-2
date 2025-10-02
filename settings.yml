@@ -1,2 +1,44 @@
-example_setting:
-  default: true
+# Simple tabs
+tabs:
+  - id: "general"
+    title: "General Settings"
+    description: "Basic theme configuration"
+    settings:
+      setting_name:
+        default: "value"
+        type: "string"
+        description: "Setting description"
+
+# Groups without tabs
+groups:
+  - id: "navigation"
+    title: "Navigation Settings"
+    description: "Configure navigation elements"
+    settings:
+      nav_style:
+        default: "horizontal"
+        type: "enum"
+        choices: ["horizontal", "vertical", "dropdown"]
+
+# Advanced tabs with groups inside
+advanced_tabs:
+  - id: "layout"
+    title: "Layout & Design"
+    groups:
+      - id: "header_group"
+        title: "Header Settings"
+        settings:
+          header_height:
+            default: 80
+            type: "integer"
+            min: 60
+            max: 120
+
+# Flat groups (no tabs)
+flat_groups:
+  - id: "basic_settings"
+    title: "Basic Settings"
+    settings:
+      site_title:
+        default: "My Site"
+        type: "string"
